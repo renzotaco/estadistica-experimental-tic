@@ -3,44 +3,242 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estadística Experimental para TIC</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Estadística experimental para TIC</title>
+  <meta name="description" content="Código, datos y casos reproducibles del libro Estadística experimental para TIC: metodología para los resultados basada en casos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/estilos.css">
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans">
-  <header class="bg-slate-900 text-white py-12 px-6">
-    <div class="max-w-4xl mx-auto">
-      <h1 class="text-3xl font-bold">Estadística Experimental para TIC</h1>
-      <p class="text-slate-300 mt-2 text-lg">Metodología para los resultados basada en casos (Ruta M–D–A–I)</p>
-      <div class="mt-4 flex gap-4">
-        <a href="https://github.com/renzotaco/estadistica-experimental-tic" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-sm font-semibold">Ver Repositorio en GitHub</a>
-        <a href="#casos" class="bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded text-sm font-semibold">Explorar Casos</a>
-      </div>
+<body>
+  <header class="barra">
+    <div class="contenedor">
+      <a class="marca" href="#">Estadística experimental para TIC</a>
+      <nav>
+        <a href="#ruta">La ruta</a>
+        <a href="#techo">El techo</a>
+        <a href="#casos">Casos</a>
+        <a href="#unidades">Cuaderno</a>
+        <a href="#volumenes">Volúmenes</a>
+        <a href="#reproducir">Reproducir</a>
+      </nav>
     </div>
   </header>
 
-  <main class="max-w-4xl mx-auto py-10 px-6">
-    <section class="mb-12">
-      <h2 class="text-2xl font-bold text-slate-900 mb-4 border-b pb-2">Acerca del Proyecto</h2>
-      <p class="text-slate-700 leading-relaxed">
-        Este repositorio aloja los recursos computacionales, datos reproducibles, cuadernos de ejercicios y solucionarios docentes que acompañan al texto. Proporciona una metodología auditable para la inferencia estadística en ingeniería de software y TIC, superando la traslación acrítica de modelos psicométricos hacia magnitudes de sistemas.
-      </p>
-    </section>
+  <section class="portada">
+    <div class="contenedor">
+      <div class="sobretitulo">Libro · Cuaderno de ejercicios · Solucionario · 2026</div>
+      <h1>Estadística experimental para TIC</h1>
+      <div class="sub">Metodología para los resultados basada en casos</div>
+      <p class="tesis">La mayoría de las tesis experimentales de TIC no puede concluir lo que concluye, y no por falta de talento,
+        sino por un formato que no distingue entre <strong>medir un sistema</strong> y <strong>preguntar por él</strong>.
+        Este sitio reúne los diecisiete casos del libro con sus datos, su código en Python y R, y la cifra que cada uno permite defender.</p>
+      <div class="botones">
+        <a class="boton principal" href="#casos">Explorar los 17 casos</a>
+        <a class="boton" href="caso.html?id=M-05">Empezar por un caso: M-05</a>
+        <a class="boton" id="enlace-repo" href="https://github.com/renzotaco/estadistica-experimental-tic">Repositorio en GitHub ↗</a>
+      </div>
+      <div class="metricas">
+        <div class="metrica"><b>124</b><span>tesis auditadas en texto completo</span></div>
+        <div class="metrica"><b>17</b><span>casos: 10 de uso correcto y 7 con oportunidad de mejora</span></div>
+        <div class="metrica"><b>16</b><span>unidades del cuaderno, calificadas con rúbrica</span></div>
+        <div class="metrica"><b>2</b><span>entornos: cada cifra se reproduce en Python y en R</span></div>
+      </div>
+    </div>
+  </section>
 
-    <section id="casos">
-      <h2 class="text-2xl font-bold text-slate-900 mb-6 border-b pb-2">Catálogo de Casos y Datasets</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="p-5 bg-white border border-slate-200 rounded-lg shadow-sm">
-          <span class="text-xs font-bold text-emerald-600 uppercase tracking-wide">Uso Correcto</span>
-          <h3 class="font-bold text-lg text-slate-800 mt-1">U-01 a U-10</h3>
-          <p class="text-sm text-slate-600 mt-2">Casos resueltos que demuestran acuerdos absolutos (Bland-Altman, CCI), ANCOVA con línea basal, tasas de Poisson y datasets públicos (KC1 NASA).</p>
+  <section class="bloque" id="ruta">
+    <div class="contenedor">
+      <h2>La ruta M–D–A–I</h2>
+      <p class="intro">Cuatro eslabones que una tesis recorre en orden. Cada uno impone un techo a lo que se puede concluir, y ninguno se repara en el capítulo de discusión.</p>
+      <div class="ruta">
+        <div class="paso"><div class="letra">M</div><h3>Medición</h3><p>¿Qué atributo, en qué unidad y con qué evidencia de calidad? El coeficiente se elige por la naturaleza del dato.</p></div>
+        <div class="paso"><div class="letra">D</div><h3>Diseño</h3><p>¿Contra qué se comparó? El diseño se nombra por la comparación ejecutada, no por la etiqueta.</p></div>
+        <div class="paso"><div class="letra">A</div><h3>Análisis</h3><p>¿Cuánto y con qué precisión? Magnitud en unidades originales, con su intervalo.</p></div>
+        <div class="paso"><div class="letra">I</div><h3>Interpretación</h3><p>¿Qué verbo corresponde? «Se observó», «se estimó» o «se atribuye», según el nivel alcanzado.</p></div>
+      </div>
+      <div class="formula">El nivel de la conclusión es el del eslabón más débil: <code>L* = min(L<sub>M</sub>, L<sub>D</sub>, L<sub>A</sub>)</code></div>
+    </div>
+  </section>
+
+  <section class="bloque" id="techo">
+    <div class="contenedor">
+      <h2>Calcule el techo de una tesis</h2>
+      <p class="intro">Las reglas del Anexo A en forma interactiva. Elija lo que la tesis hizo en cada eslabón y vea qué verbo puede usar en la conclusión.</p>
+      <div class="calculadora">
+        <div class="panel">
+          <div class="control">
+            <label for="sel-m">Medición</label>
+            <select id="sel-m">
+              <option value="4">La evidencia corresponde al dato (alfa/omega, KR-20, CCI, medida normalizada)</option>
+              <option value="2">Coeficiente psicométrico como única evidencia de un indicador operativo</option>
+              <option value="2">Sin evidencia de calidad de medición</option>
+            </select>
+          </div>
+          <div class="control">
+            <label for="sel-d">Diseño</label>
+            <select id="sel-d">
+              <option value="2">Pre–post de un solo grupo, o postest único</option>
+              <option value="3" selected>Grupos concurrentes o serie temporal, sin asignación aleatoria</option>
+              <option value="4">Grupos concurrentes con asignación aleatoria documentada</option>
+            </select>
+          </div>
+          <div class="control">
+            <label for="sel-a">Análisis</label>
+            <select id="sel-a">
+              <option value="1">Solo descriptiva o asociación</option>
+              <option value="2" selected>Contraste de hipótesis con su p valor</option>
+              <option value="3">Diferencia o tamaño del efecto con intervalo de confianza</option>
+              <option value="4">Lo anterior y el diseño alcanza 4</option>
+            </select>
+          </div>
         </div>
-        <div class="p-5 bg-white border border-slate-200 rounded-lg shadow-sm">
-          <span class="text-xs font-bold text-amber-600 uppercase tracking-wide">Oportunidad de Mejora</span>
-          <h3 class="font-bold text-lg text-slate-800 mt-1">M-01 a M-07</h3>
-          <p class="text-sm text-slate-600 mt-2">Análisis forense de errores comunes: pseudorreplicación (5 250 despachos y 10 camiones), sesgo basal no ajustado y confusión entre percepción y magnitud técnica.</p>
+        <div class="panel resultado" aria-live="polite">
+          <div class="sobretitulo">Nivel de la conclusión</div>
+          <div class="grande" id="res-nivel">2</div>
+          <div class="nombre" id="res-nombre">Diferencia observada</div>
+          <div class="verbo">Verbo que corresponde: <strong id="res-verbo">«se observó una diferencia»</strong></div>
+          <div class="limita" id="res-limita"></div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <section class="bloque" id="casos">
+    <div class="contenedor">
+      <h2>Los diecisiete casos</h2>
+      <p class="intro">Cada caso tiene su página con la pregunta metodológica, las cifras, la frase que el diseño permite escribir, el techo por eslabón y los enlaces directos a datos y código.</p>
+      <div class="filtros" role="group" aria-label="Filtrar casos">
+        <button class="chip" data-filtro="todos" aria-pressed="true">Todos</button>
+        <button class="chip" data-filtro="U" aria-pressed="false">Uso correcto (10)</button>
+        <button class="chip" data-filtro="M" aria-pressed="false">Oportunidad de mejora (7)</button>
+        <input class="buscar" id="buscar" type="search" placeholder="Buscar: ANCOVA, KR-20, latencia…" aria-label="Buscar casos">
+      </div>
+      <div class="rejilla" id="rejilla"></div>
+      <noscript><p>Active JavaScript para ver el catálogo, o consulte la carpeta <code>dataset/01_Simulados</code> del repositorio.</p></noscript>
+    </div>
+  </section>
+
+  <section class="bloque" id="unidades">
+    <div class="contenedor">
+      <h2>El cuaderno, unidad por unidad</h2>
+      <p class="intro">Las dieciséis unidades del cuaderno de ejercicios toman un caso del libro y lo plantean como problema. Cada fila enlaza al caso, con sus datos listos para descargar.</p>
+      <div class="envoltura">
+        <table class="tabla">
+          <thead><tr><th>Unidad</th><th>Título</th><th>Caso del libro</th></tr></thead>
+          <tbody id="tabla-unidades"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque" id="volumenes">
+    <div class="contenedor">
+      <h2>Tres volúmenes, un mismo criterio</h2>
+      <p class="intro">El libro enseña la ruta; el cuaderno la ejercita; el solucionario la califica con la misma regla que se aplica a las tesis.</p>
+      <div class="volumenes">
+        <div class="volumen"><div class="lomo"></div><h3>El libro</h3><div class="detalle">11 capítulos · 5 anexos</div>
+          <ul><li>Fundamento: constructo frente a magnitud</li><li>Diseño, validez y unidad experimental</li><li>Descriptivo, inferencia, magnitud y precisión</li><li>Rúbrica M–D–A–I y equivalencias R · Python · jamovi · SPSS</li></ul></div>
+        <div class="volumen"><div class="lomo"></div><h3>Cuaderno de ejercicios</h3><div class="detalle">16 unidades · soluciones en apéndice</div>
+          <ul><li>Una situación, los datos y tres preguntas</li><li>Una decisión en cinco líneas</li><li>Un cierre conceptual sin fórmulas</li></ul></div>
+        <div class="volumen"><div class="lomo"></div><h3>Solucionario para el docente</h3><div class="detalle">20 puntos por unidad</div>
+          <ul><li>Rúbrica en cinco criterios</li><li>Qué se acepta y qué no se premia</li><li>Tiempos y notas para la clase</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque" id="reproducir">
+    <div class="contenedor">
+      <h2>Reproducir una cifra</h2>
+      <p class="intro">Toda cifra tiene tres referencias: el caso, el guion y el archivo de datos. Los escenarios son sintéticos, con semilla <code>20261103</code> y manifiesto SHA-256.</p>
+      <div class="dos">
+        <div>
+          <h3>Python</h3>
+<pre><span class="c"># regenerar los datos</span>
+python codigo/python/generar_datos_casos.py
+python codigo/python/generar_casos_tecnicos.py
+
+<span class="c"># verificar contra el manifiesto SHA-256</span>
+python codigo/python/verificar_escenarios.py
+
+<span class="c"># un caso concreto</span>
+python codigo/python/analisis_M07.py</pre>
+        </div>
+        <div>
+          <h3>R</h3>
+<pre><span class="c"># paquetes (solo para dos guiones)</span>
+source("codigo/r/00_instalar_paquetes.R")
+
+<span class="c"># todos los análisis</span>
+Rscript codigo/r/run_all.R
+
+<span class="c"># el caso con datos reales (KC1, NASA)</span>
+Rscript codigo/r/04_datos_publicos.R</pre>
+        </div>
+      </div>
+      <div class="aviso"><strong>Datos sintéticos, declarados.</strong> Ningún escenario proviene de una institución real; reproducen patrones observados en el corpus de 124 tesis. El caso U-10 usa datos públicos de la NASA (KC1, PROMISE). No hay datos personales en el repositorio.</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="contenedor">
+      <div class="cita"><strong>Cómo citar.</strong> Taco Coayla, R. A. (2026). <em>Estadística experimental para TIC: código y datos</em> [software]. CC BY-NC-SA 4.0.</div>
+      Dr. Renzo Alberto Taco Coayla · Universidad Privada de Tacna ·
+      <a href="https://orcid.org/0000-0003-0014-7216">ORCID 0000-0003-0014-7216</a>
+    </div>
+  </footer>
+
+  <script src="assets/casos.js"></script>
+  <script>
+    // Catálogo
+    const rejilla = document.getElementById("rejilla");
+    const mini = (n) => [1, 2, 3, 4].map((i) => `<i class="${i <= n ? "on" : ""}"></i>`).join("");
+    const techo = (c) => Math.min(c.niveles.M, c.niveles.D, c.niveles.A);
+    rejilla.innerHTML = CASOS.map((c) => `
+      <a class="tarjeta ${c.familia}" href="caso.html?id=${c.id}" data-familia="${c.familia}"
+         data-texto="${(c.id + " " + c.titulo + " " + c.leccion + " " + c.cifras.flat().join(" ")).toLowerCase()}">
+        <div class="cabeza"><span class="id">${c.id}</span>
+          <span class="etiqueta ${c.publico ? "P" : c.familia}">${c.publico ? "Datos públicos" : c.familia === "U" ? "Uso correcto" : "Oportunidad de mejora"}</span></div>
+        <h3>${c.titulo}</h3>
+        <p>${c.leccion}</p>
+        <div class="pie"><span>Unidad ${c.unidad} del cuaderno</span>
+          <span class="techo-mini" title="Techo L* = ${techo(c)}">L* ${techo(c)} ${mini(techo(c))}</span></div>
+      </a>`).join("");
+
+    let filtro = "todos";
+    const aplicar = () => {
+      const q = document.getElementById("buscar").value.trim().toLowerCase();
+      rejilla.querySelectorAll(".tarjeta").forEach((t) => {
+        const ok = (filtro === "todos" || t.dataset.familia === filtro) && (!q || t.dataset.texto.includes(q));
+        t.hidden = !ok;
+      });
+    };
+    document.querySelectorAll(".chip").forEach((b) => b.addEventListener("click", () => {
+      filtro = b.dataset.filtro;
+      document.querySelectorAll(".chip").forEach((x) => x.setAttribute("aria-pressed", x === b));
+      aplicar();
+    }));
+    document.getElementById("buscar").addEventListener("input", aplicar);
+
+    // Unidades del cuaderno
+    document.getElementById("tabla-unidades").innerHTML = UNIDADES.map(([n, t, ids]) =>
+      `<tr><td>${n}</td><td>${t}</td><td>${ids.map((id) => `<a href="caso.html?id=${id}">${id}</a>`).join("")}</td></tr>`).join("");
+
+    // Calculadora del techo
+    const eslabones = { m: "la medición", d: "el diseño", a: "el análisis" };
+    const calcular = () => {
+      const v = Object.fromEntries(["m", "d", "a"].map((k) => [k, +document.getElementById("sel-" + k).value]));
+      let a = v.a;
+      if (a === 4 && v.d < 4) a = 3; // el análisis solo llega a 4 si el diseño lo permite
+      const l = Math.min(v.m, v.d, a);
+      const lim = Object.entries({ ...v, a }).filter(([, x]) => x === l).map(([k]) => eslabones[k]);
+      document.getElementById("res-nivel").textContent = l;
+      document.getElementById("res-nombre").textContent = NIVELES[l][0];
+      document.getElementById("res-verbo").textContent = `«${NIVELES[l][1]}»`;
+      document.getElementById("res-limita").textContent = `Limitado por ${lim.join(" y ")}.`;
+    };
+    document.querySelectorAll("select").forEach((s) => s.addEventListener("change", calcular));
+    calcular();
+  </script>
 </body>
 </html>

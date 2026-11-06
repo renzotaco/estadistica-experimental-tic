@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caso · Estadística experimental para TIC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/estilos.css">
+</head>
+<body>
+  <header class="barra">
+    <div class="contenedor">
+      <a class="marca" href="index.html">Estadística experimental para TIC</a>
+      <nav>
+        <a href="index.html#casos">Todos los casos</a>
+        <a href="index.html#unidades">Cuaderno</a>
+        <a href="index.html#reproducir">Reproducir</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenedor" id="caso"></main>
+
+  <footer>
+    <div class="contenedor">Datos sintéticos con semilla 20261103, salvo U-10 (KC1, NASA). ·
+      <a href="https://orcid.org/0000-0003-0014-7216">Renzo Alberto Taco Coayla</a> · 2026</div>
+  </footer>
+
+  <script src="assets/casos.js"></script>
+  <script>
+    const id = new URLSearchParams(location.search).get("id") || "U-01";
+    const i = CASOS.findIndex((c) => c.id === id);
+    const raiz = document.getElementById("caso");
+
+    if (i < 0) {
+      raiz.innerHTML = `<div class="caso-cabeza"><p class="miga"><a href="index.html#casos">← Casos</a></p>
+        <h1>Caso no encontrado</h1><p>No existe el caso «${id.replace(/[<>&"]/g, "")}».</p></div>`;
+    } else {
+      const c = CASOS[i];
+      const L = Math.min(c.niveles.M, c.niveles.D, c.niveles.A);
+      const nombreFam = c.familia === "U" ? "Uso correcto" : "Oportunidad de mejora";
+      document.title = `${c.id} · ${c.titulo}`;
+
+      const fila = (k, n, total) => `<div class="fila ${total ? "total" : ""}"><span>${k}</span>
+        <div class="barra-nivel"><div style="width:${n * 25}%"></div></div><b>${n}</b></div>`;
+      const archivo = (ruta) => `<li><span class="ruta-a">${ruta}</span>
+        <span class="acciones"><a href="${enlace(ruta)}">Ver</a><a href="${crudo(ruta)}" download>Descargar</a></span></li>`;
+      const lista = (rutas) => rutas.length ? `<ul class="archivos">${rutas.map(archivo).join("")}</ul>`
+                                             : `<p class="vacio">Sin guion en este entorno.</p>`;
+      const ant = CASOS[i - 1], sig = CASOS[i + 1];
+
+      raiz.innerHTML = `
+        <p class="miga"><a href="index.html#casos">← Casos</a> / ${c.id}</p>
+        <div class="caso-cabeza">
+          <div class="meta">
+            <span class="id">${c.id}</span>
+            <span class="etiqueta ${c.familia}">${nombreFam}</span>
+            ${c.publico ? '<span class="etiqueta P">Datos públicos</span>' : ""}
+            <span class="etiqueta P">Unidad ${c.unidad} del cuaderno</span>
+          </div>
+          <h1>${c.titulo}</h1>
+          <p class="pregunta">${c.pregunta}</p>
+        </div>
+
+        <div class="caso-cuerpo">
+          <div>
+            <div class="seccion-caso">
+              <h2>La escena</h2>
+              <p>${c.escena}</p>
+              <p><strong>${c.familia === "U" ? "Lo que se hizo bien:" : "El error:"}</strong> ${c.leccion}</p>
+            </div>
+            <div class="seccion-caso">
+              <h2>Las cifras</h2>
+              <div class="cifras">${c.cifras.map(([k, v]) => `<div class="cifra"><span>${k}</span><b>${v}</b></div>`).join("")}</div>
+            </div>
+            <div class="seccion-caso">
+              <h2>La frase de conclusión</h2>
+              <div class="frase si"><small>Lo que el diseño permite escribir</small>«${c.si}»</div>
+              <div class="frase no"><small>Lo que no se puede escribir</small><br>«${c.no}»</div>
+            </div>
+            <div class="seccion-caso">
+              <h2>Datos</h2>
+              ${lista(c.datos)}
+            </div>
+            <div class="seccion-caso">
+              <h2>Código</h2>
+              <h3 style="font-size:16px;margin:0 0 6px">Python</h3>${lista(c.py)}
+              <h3 style="font-size:16px;margin:18px 0 6px">R</h3>${lista(c.r)}
+              ${c.gen ? `<h3 style="font-size:16px;margin:18px 0 6px">Generador de los datos</h3>${lista([c.gen])}` : ""}
+            </div>
+          </div>
+
+          <aside class="lado">
+            <div class="panel niveles">
+              <h3>Techo de la conclusión</h3>
+              ${fila("Medición", c.niveles.M)}${fila("Diseño", c.niveles.D)}${fila("Análisis", c.niveles.A)}
+              ${fila("L*", L, true)}
+              <p style="font-size:14px;margin:12px 0 0">Nivel ${L}: <strong>${NIVELES[L][0]}</strong>.<br>
+                Verbo: «${NIVELES[L][1]}».</p>
+            </div>
+            <div class="panel">
+              <h3>En el libro</h3>
+              <p style="margin:0 0 8px;font-size:14.5px">Capítulos ${c.capitulos}</p>
+              <p style="margin:0;font-size:14.5px">Cuaderno: unidad ${c.unidad}</p>
+            </div>
+            <div class="panel">
+              <h3>Fuentes que lo sostienen</h3>
+              <ul style="margin:0;padding-left:18px;font-size:14.5px">${c.fuentes.map((f) => `<li>${f}</li>`).join("")}</ul>
+            </div>
+          </aside>
+        </div>
+
+        <nav class="navegacion">
+          ${ant ? `<a href="caso.html?id=${ant.id}"><small>← Anterior</small>${ant.id} · ${ant.titulo}</a>` : "<span></span>"}
+          ${sig ? `<a href="caso.html?id=${sig.id}" style="text-align:right"><small>Siguiente →</small>${sig.id} · ${sig.titulo}</a>` : ""}
+        </nav>`;
+    }
+  </script>
+</body>
+</html>
