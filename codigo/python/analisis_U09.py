@@ -8,7 +8,7 @@ from scipy import stats
 from statsmodels.stats.proportion import proportion_confint
 
 RAIZ = pathlib.Path(__file__).resolve().parents[2]
-DATOS = RAIZ / "05_Datos" / "01_Simulados" / "U-09" / "datos.csv"
+DATOS = RAIZ / "dataset" / "01_Simulados" / "U-09" / "datos.csv"
 SALIDA = pathlib.Path(__file__).resolve().parent / "resultados"
 SALIDA.mkdir(exist_ok=True)
 rng = np.random.default_rng(20261103)

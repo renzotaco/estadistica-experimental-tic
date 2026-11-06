@@ -6,8 +6,8 @@ Calcula, sobre los tres conjuntos del escenario:
   (c) ficha medida 2 veces -> "alfa" de dos columnas (que es r), CCI(A,1) y Bland-Altman
 
 Salida:
-  02_Tablas_y_Figuras/01_Fuentes/T-M07-01_coeficientes.csv
-  02_Tablas_y_Figuras/01_Fuentes/T-M07-02_bland_altman.csv
+  codigo/python/resultados/T-M07-01_coeficientes.csv
+  codigo/python/resultados/T-M07-02_bland_altman.csv
 
 Uso: python analisis_M07.py
 """
@@ -20,8 +20,8 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
-SIM = ROOT / "05_Datos" / "01_Simulados" / "M-07"
-OUT = ROOT / "02_Tablas_y_Figuras" / "01_Fuentes"
+SIM = ROOT / "dataset" / "01_Simulados" / "M-07"
+OUT = Path(__file__).resolve().parent / "resultados"
 SEMILLA = 20261103
 REPLICAS = 2000
 

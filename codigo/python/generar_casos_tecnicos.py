@@ -4,7 +4,7 @@ Los parámetros están calibrados para ser plausibles en una institución peruan
 cobertura de controles propia de un SGSI en implantación, tiempos de mesa de ayuda de un servicio
 con ITIL y densidad de defectos de un producto mantenido. No provienen de ninguna organización real.
 
-Salidas: 05_Datos/01_Simulados/{U-07,U-08,U-09}/datos.csv y parametros.json
+Salidas: dataset/01_Simulados/{U-07,U-08,U-09}/datos.csv y parametros.json
 """
 
 from __future__ import annotations
@@ -16,7 +16,7 @@ import numpy as np
 import pandas as pd
 
 RAIZ = pathlib.Path(__file__).resolve().parents[2]
-BASE = RAIZ / "05_Datos" / "01_Simulados"
+BASE = RAIZ / "dataset" / "01_Simulados"
 SEMILLA = 20261103
 
 

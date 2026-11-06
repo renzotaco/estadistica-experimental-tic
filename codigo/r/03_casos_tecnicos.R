@@ -3,21 +3,21 @@
 # (Mann-Whitney con A12). Equivalente en R de los scripts de Python.
 #
 # Uso, desde la raíz del proyecto:
-#   Rscript 06_Codigo/02_Analisis/R/03_casos_tecnicos.R
+#   Rscript codigo/r/03_casos_tecnicos.R
 #
-# Salidas: 06_Codigo/02_Analisis/R/resultados/*.md y *.csv
+# Salidas: codigo/r/resultados/*.md y *.csv
 # Solo base R, salvo MASS::glm.nb para la binomial negativa (viene con R).
 # =============================================================================
 
 raiz <- normalizePath(".")
 repeat {
-  if (dir.exists(file.path(raiz, "05_Datos"))) break
+  if (dir.exists(file.path(raiz, "dataset"))) break
   padre <- dirname(raiz)
-  if (padre == raiz) stop("Ejecuta el script dentro del proyecto del libro: no encuentro 05_Datos.")
+  if (padre == raiz) stop("Ejecuta el script dentro del proyecto del libro: no encuentro la carpeta dataset.")
   raiz <- padre
 }
-sim  <- file.path(raiz, "05_Datos", "01_Simulados")
-out  <- file.path(raiz, "06_Codigo", "02_Analisis", "R", "resultados")
+sim  <- file.path(raiz, "dataset", "01_Simulados")
+out  <- file.path(raiz, "codigo", "r", "resultados")
 dir.create(out, showWarnings = FALSE, recursive = TRUE)
 
 set.seed(20261103)

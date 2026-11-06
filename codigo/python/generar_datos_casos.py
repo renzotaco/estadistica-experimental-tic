@@ -6,9 +6,9 @@ M-01..M-06). Todos los datos son sinteticos y reproducibles: semilla maestra
 caso no altera los demas.
 
 Salidas:
-  05_Datos/01_Simulados/<CASO>/datos.csv
-  05_Datos/01_Simulados/<CASO>/parametros.json
-  05_Datos/05_Manifiestos/manifiesto_sha256.csv
+  dataset/01_Simulados/<CASO>/datos.csv
+  dataset/01_Simulados/<CASO>/parametros.json
+  dataset/05_Manifiestos/manifiesto_sha256.csv
 
 Uso: python generar_datos_casos.py
 """
@@ -24,8 +24,8 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "05_Datos" / "01_Simulados"
-MAN = ROOT / "05_Datos" / "05_Manifiestos"
+OUT = ROOT / "dataset" / "01_Simulados"
+MAN = ROOT / "dataset" / "05_Manifiestos"
 MASTER_SEED = 20261103
 SCENARIOS = ["U-01", "U-02", "U-03", "U-04", "U-05", "U-06",
              "M-01", "M-02", "M-03", "M-04", "M-05", "M-06", "M-07"]

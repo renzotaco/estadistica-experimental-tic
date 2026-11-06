@@ -5,8 +5,8 @@ import pathlib
 import numpy as np
 import pandas as pd
 
-RAIZ = pathlib.Path(r"C:\Download\downpdfs\ARTICLES\Libro_Tesis_TIC")
-BASE = RAIZ / "05_Datos" / "01_Simulados"
+RAIZ = pathlib.Path(__file__).resolve().parents[2]
+BASE = RAIZ / "dataset" / "01_Simulados"
 rng = np.random.default_rng(20261103)
 
 

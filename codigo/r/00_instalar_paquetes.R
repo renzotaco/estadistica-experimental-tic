@@ -2,7 +2,7 @@
 # Instalador de paquetes de R para los análisis del libro.
 #
 # Uso, desde la raíz del proyecto:
-#   source("06_Codigo/02_Analisis/R/00_instalar_paquetes.R")
+#   source("codigo/r/00_instalar_paquetes.R")
 #
 # Solo instala lo que falta. Los casos centrales del libro (M-01, M-07, U-07,
 # U-08, U-09) funcionan con R base; los paquetes de esta lista son para los

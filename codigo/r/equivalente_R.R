@@ -7,12 +7,12 @@ library(effectsize)
 
 raiz <- normalizePath(".")
 repeat {
-  if (dir.exists(file.path(raiz, "05_Datos"))) break
+  if (dir.exists(file.path(raiz, "dataset"))) break
   padre <- dirname(raiz)
-  if (padre == raiz) stop("Ejecuta el script dentro del proyecto del libro: no encuentro 05_Datos.")
+  if (padre == raiz) stop("Ejecuta el script dentro del proyecto del libro: no encuentro la carpeta dataset.")
   raiz <- padre
 }
-datos_docentes <- file.path(raiz, "05_Datos", "04_Docentes")
+datos_docentes <- file.path(raiz, "dataset", "04_Docentes")
 
 # 1) Mann-Whitney
 mw <- read_excel(file.path(datos_docentes, "dataset_MannWhitney_100_casos.xlsx"))

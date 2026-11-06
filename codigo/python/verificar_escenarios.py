@@ -4,7 +4,7 @@ No es un analisis del libro: es el control de calidad de los datos. Si un escena
 deja de reproducir su propiedad (por ejemplo, el retest con sesgo deja de dar r alta
 y CCI baja), el caso pierde su valor didactico y hay que revisar el generador.
 
-Salida: 05_Datos/05_Manifiestos/verificacion_escenarios.csv
+Salida: dataset/05_Manifiestos/verificacion_escenarios.csv
 Uso: python verificar_escenarios.py
 """
 
@@ -18,8 +18,8 @@ import statsmodels.formula.api as smf
 from scipy import stats
 
 ROOT = Path(__file__).resolve().parents[2]
-SIM = ROOT / "05_Datos" / "01_Simulados"
-OUT = ROOT / "05_Datos" / "05_Manifiestos"
+SIM = ROOT / "dataset" / "01_Simulados"
+OUT = ROOT / "dataset" / "05_Manifiestos"
 
 
 def leer(caso: str, archivo: str = "datos.csv") -> pd.DataFrame:

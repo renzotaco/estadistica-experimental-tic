@@ -2,7 +2,7 @@
 # Ejecuta todos los análisis de R del libro, en orden.
 #
 # Uso, desde la raíz del proyecto:
-#   Rscript 06_Codigo/02_Analisis/R/run_all.R
+#   Rscript codigo/r/run_all.R
 #
 # Si un script falla, se detiene y dice cuál: es preferible a seguir con un
 # resultado incompleto.
@@ -10,20 +10,20 @@
 
 raiz <- normalizePath(".")
 repeat {
-  if (dir.exists(file.path(raiz, "05_Datos"))) break
+  if (dir.exists(file.path(raiz, "dataset"))) break
   padre <- dirname(raiz)
-  if (padre == raiz) stop("Ejecuta el script dentro del proyecto del libro: no encuentro 05_Datos.")
+  if (padre == raiz) stop("Ejecuta el script dentro del proyecto del libro: no encuentro la carpeta dataset.")
   raiz <- padre
 }
-if (!dir.exists(file.path(raiz, "05_Datos", "01_Simulados"))) {
-  stop("Ejecuta este script desde la raíz del proyecto: no encuentro 05_Datos/01_Simulados.")
+if (!dir.exists(file.path(raiz, "dataset", "01_Simulados"))) {
+  stop("Ejecuta este script desde la raíz del proyecto: no encuentro dataset/01_Simulados.")
 }
 
 scripts <- c(
-  "06_Codigo/02_Analisis/analisis_M01.R",
-  "06_Codigo/02_Analisis/analisis_M07.R",
-  "06_Codigo/02_Analisis/R/03_casos_tecnicos.R",
-  "06_Codigo/07_Datasets_Docentes/equivalente_R.R"
+  "codigo/r/analisis_M01.R",
+  "codigo/r/analisis_M07.R",
+  "codigo/r/03_casos_tecnicos.R",
+  "codigo/r/equivalente_R.R"
 )
 
 for (s in scripts) {

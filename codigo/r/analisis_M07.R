@@ -7,21 +7,21 @@
 # Solo base R: no requiere paquetes, para que el lector pueda correrlo tal cual.
 #
 # Uso, desde la raiz del proyecto:
-#   Rscript 06_Codigo/02_Analisis/analisis_M07.R
+#   Rscript codigo/r/analisis_M07.R
 #
-# Salidas: 02_Tablas_y_Figuras/01_Fuentes/T-M07-01_coeficientes.csv
-#          02_Tablas_y_Figuras/01_Fuentes/T-M07-02_bland_altman.csv
+# Salidas: codigo/r/resultados/T-M07-01_coeficientes.csv
+#          codigo/r/resultados/T-M07-02_bland_altman.csv
 # =============================================================================
 
 raiz <- normalizePath(".")
 repeat {
-  if (dir.exists(file.path(raiz, "05_Datos"))) break
+  if (dir.exists(file.path(raiz, "dataset"))) break
   padre <- dirname(raiz)
-  if (padre == raiz) stop("Ejecuta el script dentro del proyecto del libro: no encuentro 05_Datos.")
+  if (padre == raiz) stop("Ejecuta el script dentro del proyecto del libro: no encuentro la carpeta dataset.")
   raiz <- padre
 }
-sim  <- file.path(raiz, "05_Datos", "01_Simulados", "M-07")
-out  <- file.path(raiz, "02_Tablas_y_Figuras", "01_Fuentes")
+sim  <- file.path(raiz, "dataset", "01_Simulados", "M-07")
+out  <- file.path(raiz, "codigo", "r", "resultados")
 dir.create(out, showWarnings = FALSE, recursive = TRUE)
 
 lik <- read.csv(file.path(sim, "datos_likert.csv"), check.names = FALSE)

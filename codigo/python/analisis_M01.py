@@ -4,7 +4,7 @@ Muestra el contraste que sostiene la seccion 2.4 del capitulo 2:
   - lo que la tesis informa (r de retest y alfa sobre dos columnas)
   - lo que corresponde (CCI(A,1) y limites de acuerdo de Bland-Altman)
 
-Salida: 02_Tablas_y_Figuras/01_Fuentes/T-M01-01_acuerdo.csv
+Salida: codigo/python/resultados/T-M01-01_acuerdo.csv
 
 Uso: python analisis_M01.py
 """
@@ -17,8 +17,8 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
-SIM = ROOT / "05_Datos" / "01_Simulados" / "M-01"
-OUT = ROOT / "02_Tablas_y_Figuras" / "01_Fuentes"
+SIM = ROOT / "dataset" / "01_Simulados" / "M-01"
+OUT = Path(__file__).resolve().parent / "resultados"
 SEMILLA = 20261103
 REPLICAS = 2000
 

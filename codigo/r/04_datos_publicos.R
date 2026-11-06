@@ -9,30 +9,30 @@
 #          size on defect prediction using static measures. PROMISE Workshop, ICSE.
 #
 # Uso, desde la raíz del proyecto:
-#   Rscript 06_Codigo/02_Analisis/R/04_datos_publicos.R
+#   Rscript codigo/r/04_datos_publicos.R
 #
-# Salidas: 06_Codigo/02_Analisis/R/resultados/publico_KC1.csv
-#          06_Codigo/02_Analisis/R/resultados/publico_KC1.md
+# Salidas: codigo/r/resultados/publico_KC1.csv
+#          codigo/r/resultados/publico_KC1.md
 # =============================================================================
 
 # La raíz del proyecto se busca hacia arriba: funciona igual desde RStudio (que abre
 # la carpeta del script) que desde la consola con el directorio del proyecto.
 raiz <- normalizePath(".")
 repeat {
-  if (dir.exists(file.path(raiz, "05_Datos")) && dir.exists(file.path(raiz, "03_Manuscritos"))) break
+  if (dir.exists(file.path(raiz, "dataset"))) break
   padre <- dirname(raiz)
-  if (padre == raiz) stop("Ejecuta el script dentro del proyecto del libro: no encuentro 05_Datos.")
+  if (padre == raiz) stop("Ejecuta el script dentro del proyecto del libro: no encuentro la carpeta dataset.")
   raiz <- padre
 }
 cat("raíz del proyecto:", raiz, "\n")
 
-out <- file.path(raiz, "06_Codigo", "02_Analisis", "R", "resultados")
+out <- file.path(raiz, "codigo", "r", "resultados")
 dir.create(out, showWarnings = FALSE, recursive = TRUE)
 
 url <- "https://www.openml.org/data/download/53953/kc1-numeric.arff"
 
 # 1) copia local, si existe; 2) descarga directa
-local   <- file.path(raiz, "05_Datos", "05_Publicos", "kc1-numeric.arff")
+local   <- file.path(raiz, "dataset", "05_Publicos", "kc1-numeric.arff")
 destino <- if (file.exists(local)) local else file.path(tempdir(), "kc1.arff")
 
 if (!file.exists(destino)) {

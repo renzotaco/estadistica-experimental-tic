@@ -1,14 +1,19 @@
 """Calcula los indicadores de U-03, U-04 y U-05 para sus fichas."""
 
 import pathlib
+import sys
 
 import numpy as np
 import pandas as pd
 from scipy import stats
 
-RAIZ = pathlib.Path(r"C:\Download\downpdfs\ARTICLES\Libro_Tesis_TIC")
-BASE = RAIZ / "05_Datos" / "01_Simulados"
+RAIZ = pathlib.Path(__file__).resolve().parents[2]
+BASE = RAIZ / "dataset" / "01_Simulados"
 rng = np.random.default_rng(20261103)
+
+# La consola de Windows usa cp1252 y no imprime «→»: se fuerza UTF-8.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 
 
 def u03() -> None:
@@ -33,9 +38,7 @@ def u03() -> None:
 
 def u04() -> None:
     d = pd.read_csv(BASE / "U-04" / "datos.csv")
-    sus = [c for c in d.columns if c.startswith("sus")]
-    puntaje = d[sus].mean(axis=1) * 20  # escala SUS 0-100
-    d = d.assign(sus_total=puntaje)
+    d = d.assign(sus_total=d["sus_puntaje"])  # puntaje SUS ya en escala 0-100
     a, b = sorted(d.grupo.unique())
     x = d.loc[d.grupo == a, "sus_total"].to_numpy()
     y = d.loc[d.grupo == b, "sus_total"].to_numpy()
@@ -45,9 +48,9 @@ def u04() -> None:
     print(f"  n = {len(d)} ({a}: {len(x)} · {b}: {len(y)})")
     print(f"  SUS mediana {a} = {np.median(x):.1f} · {b} = {np.median(y):.1f}")
     print(f"  Mann-Whitney p = {u.pvalue:.4f} · A12 = {a12:.3f}")
-    if "tiempo_tarea_seg" in d.columns:
-        t1 = d.loc[d.grupo == a, "tiempo_tarea_seg"].to_numpy()
-        t2 = d.loc[d.grupo == b, "tiempo_tarea_seg"].to_numpy()
+    if "tiempo_tarea_s" in d.columns:
+        t1 = d.loc[d.grupo == a, "tiempo_tarea_s"].to_numpy()
+        t2 = d.loc[d.grupo == b, "tiempo_tarea_s"].to_numpy()
         u2 = stats.mannwhitneyu(t1, t2, alternative="two-sided")
         print(f"  tiempo de tarea: mediana {np.median(t1):.0f} vs {np.median(t2):.0f} s · "
               f"A12 = {u2.statistic/(len(t1)*len(t2)):.3f} · p = {u2.pvalue:.2e}")

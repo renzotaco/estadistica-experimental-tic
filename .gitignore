@@ -15,3 +15,7 @@ __pycache__/
 *.docx
 *.pdf
 # datos que cambian al regenerarse (se conservan los manifiestos)
+
+# salidas de los scripts (se regeneran al ejecutarlos)
+codigo/python/resultados/
+codigo/r/resultados/
