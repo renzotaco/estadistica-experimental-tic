@@ -25,7 +25,8 @@
 
   <footer>
     <div class="contenedor">Datos sintéticos con semilla 20261103, salvo U-10 (KC1, NASA). ·
-      <a href="https://orcid.org/0000-0003-0014-7216">Renzo Alberto Taco Coayla</a> · 2026</div>
+      <a href="https://orcid.org/0000-0003-0014-7216" target="_blank" rel="noopener">Dr. Renzo Alberto Taco Coayla</a> ·
+      <a href="mailto:rentaco@upt.pe">rentaco@upt.pe</a> · 2026</div>
   </footer>
 
   <script src="assets/casos.js"></script>
@@ -46,7 +47,7 @@
       const fila = (k, n, total) => `<div class="fila ${total ? "total" : ""}"><span>${k}</span>
         <div class="barra-nivel"><div style="width:${n * 25}%"></div></div><b>${n}</b></div>`;
       const archivo = (ruta) => `<li><span class="ruta-a">${ruta}</span>
-        <span class="acciones"><a href="${enlace(ruta)}">Ver</a><a href="${crudo(ruta)}" download>Descargar</a></span></li>`;
+        <span class="acciones"><a href="${enlace(ruta)}" target="_blank" rel="noopener">Ver</a><a href="${crudo(ruta)}" target="_blank" rel="noopener" download>Descargar</a></span></li>`;
       const lista = (rutas) => rutas.length ? `<ul class="archivos">${rutas.map(archivo).join("")}</ul>`
                                              : `<p class="vacio">Sin guion en este entorno.</p>`;
       const ant = CASOS[i - 1], sig = CASOS[i + 1];

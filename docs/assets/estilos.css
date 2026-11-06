@@ -51,6 +51,11 @@ code, .mono { font-family: var(--mono); font-size: .88em; }
 .sobretitulo { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--suave); }
 .portada h1 { font-size: clamp(34px, 6vw, 58px); margin: 12px 0 8px; letter-spacing: -.01em; }
 .portada .sub { font-family: var(--serif); font-style: italic; font-size: clamp(18px, 2.4vw, 23px); color: var(--suave); }
+.autor { display: flex; align-items: center; gap: 14px; margin-top: 22px; }
+.autor img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex: none;
+  border: 2px solid var(--papel); box-shadow: 0 0 0 1px var(--linea); }
+.autor strong { display: block; font-size: 16px; }
+.autor span { color: var(--suave); font-size: 14px; }
 .portada .tesis { max-width: 720px; font-size: 18px; margin: 28px 0 32px; }
 .botones { display: flex; flex-wrap: wrap; gap: 12px; }
 .boton { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 8px;
