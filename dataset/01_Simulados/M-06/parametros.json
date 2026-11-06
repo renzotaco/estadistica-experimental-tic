@@ -1,0 +1,19 @@
+{
+  "escenario": "Percepcion de calidad (Likert) frente a medida tecnica del mismo modulo",
+  "n_usuarios": 180,
+  "n_modulos": 12,
+  "unidad": "usuario para la percepcion; modulo para el atributo tecnico",
+  "error": "presentar el cuestionario como medida de la calidad tecnica del software",
+  "correccion": "ISO/IEC 25023 para el atributo; el cuestionario mide percepcion",
+  "archivos": [
+    "datos.csv",
+    "datos_modulos.csv"
+  ],
+  "caso": "M-06",
+  "semilla_maestra": 20261103,
+  "generador": "generar_datos_casos.py",
+  "filas": 180,
+  "columnas": 12,
+  "fecha_utc": "2026-11-04T22:30:17Z",
+  "declaracion": "Datos sinteticos; no reproducen ninguna tesis del corpus."
+}

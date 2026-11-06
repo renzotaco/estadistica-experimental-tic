@@ -1,0 +1,9 @@
+{
+  "instrumento": "registros de la herramienta de tickets (ITIL 4, ISO/IEC 20000-1)",
+  "unidad_experimental": "semana de servicio",
+  "diseno": "serie temporal interrumpida con 12 semanas antes y 12 después",
+  "prueba_correcta": "regresión segmentada para el nivel y la pendiente; binomial negativa para conteos",
+  "calibracion": "mediana de 48 h antes y 29 h después; resolución al primer contacto de 0,42 a 0,58",
+  "semilla": 20261103,
+  "nota": "datos simulados; no corresponden a una organización real"
+}

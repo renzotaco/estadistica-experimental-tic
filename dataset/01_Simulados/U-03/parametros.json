@@ -1,0 +1,18 @@
+{
+  "escenario": "Pre-post de un solo grupo, puntaje 0-20, items dicotomicos",
+  "n": 45,
+  "k_items": 20,
+  "unidad": "participante",
+  "analisis_correcto": "KR-20 para el instrumento; d_z con IC; conclusion como diferencia observada",
+  "error_que_previene": "alfa sobre items dicotomicos sin discutir KR-20; concluir causalidad",
+  "caso": "U-03",
+  "semilla_maestra": 20261103,
+  "generador": "generar_datos_casos.py",
+  "archivos": [
+    "datos.csv"
+  ],
+  "filas": 45,
+  "columnas": 23,
+  "fecha_utc": "2026-11-04T22:30:17Z",
+  "declaracion": "Datos sinteticos; no reproducen ninguna tesis del corpus."
+}

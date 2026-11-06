@@ -1,0 +1,19 @@
+{
+  "escenario": "Grupos intactos con desbalance basal de 0,6 DE",
+  "n": 100,
+  "unidad": "empleado",
+  "efecto_verdadero": 5.0,
+  "desbalance_de": 0.6,
+  "error": "t sobre el postest que atribuye al piloto la diferencia inicial",
+  "correccion": "ANCOVA con la linea basal como covariable",
+  "caso": "M-04",
+  "semilla_maestra": 20261103,
+  "generador": "generar_datos_casos.py",
+  "archivos": [
+    "datos.csv"
+  ],
+  "filas": 100,
+  "columnas": 4,
+  "fecha_utc": "2026-11-04T22:30:17Z",
+  "declaracion": "Datos sinteticos; no reproducen ninguna tesis del corpus."
+}

@@ -1,0 +1,9 @@
+{
+  "instrumento": "ISO/IEC 27001:2022, anexo A (93 controles en cuatro temas)",
+  "unidad_experimental": "control del anexo A",
+  "diseno": "dos auditorías sobre los mismos controles",
+  "prueba_correcta": "McNemar para controles pareados; proporción con intervalo de Wilson",
+  "calibracion": "cobertura inicial baja y final alta, compatible con un SGSI en implantación",
+  "semilla": 20261103,
+  "nota": "datos simulados; no corresponden a una organización real"
+}

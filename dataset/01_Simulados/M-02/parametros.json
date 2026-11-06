@@ -1,0 +1,19 @@
+{
+  "escenario": "Pre-post de un solo grupo con tendencia temporal de 2 h/dia",
+  "n": 24,
+  "unidad": "dia",
+  "efecto_verdadero": 0.0,
+  "tendencia_por_dia": 2.0,
+  "error": "t pareada que atribuye la tendencia al artefacto",
+  "correccion": "comparador concurrente con ANCOVA o serie temporal interrumpida",
+  "caso": "M-02",
+  "semilla_maestra": 20261103,
+  "generador": "generar_datos_casos.py",
+  "archivos": [
+    "datos.csv"
+  ],
+  "filas": 24,
+  "columnas": 3,
+  "fecha_utc": "2026-11-04T22:30:17Z",
+  "declaracion": "Datos sinteticos; no reproducen ninguna tesis del corpus."
+}

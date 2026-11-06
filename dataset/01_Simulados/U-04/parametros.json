@@ -1,0 +1,17 @@
+{
+  "escenario": "Dos interfaces, grupos independientes; SUS y metricas de tarea",
+  "n": 80,
+  "unidad": "participante",
+  "analisis_correcto": "omega y estructura del SUS; Mann-Whitney con A12 e IC para tiempo",
+  "error_que_previene": "presentar el alfa como prueba de validez del constructo",
+  "caso": "U-04",
+  "semilla_maestra": 20261103,
+  "generador": "generar_datos_casos.py",
+  "archivos": [
+    "datos.csv"
+  ],
+  "filas": 80,
+  "columnas": 15,
+  "fecha_utc": "2026-11-04T22:30:17Z",
+  "declaracion": "Datos sinteticos; no reproducen ninguna tesis del corpus."
+}

@@ -1,0 +1,58 @@
+﻿caso,metrica,valor,nota
+U-01,r_pearson,0.9982,correlacion alta pese al sesgo
+U-01,cci_a1,0.9959,acuerdo absoluto: descuenta el sesgo
+U-01,sesgo_medio_ms,19.8167,diferencia media entre instrumentos
+U-01,loa_inferior,-29.7289,Bland-Altman
+U-01,loa_superior,69.3622,Bland-Altman
+U-02,t_postest_p,0.0003,contraste sin ajuste
+U-02,ancova_p,0.0,ANCOVA
+U-02,ancova_efecto_ms,-40.9335,efecto ajustado
+U-02,diferencia_bruta_ms,-68.1617,diferencia de medias postest
+U-03,kr20_post,0.8542,consistencia de una prueba dicotomica
+U-03,t_pareada_p,0.0,diferencia pre-post
+U-03,dz,1.0215,tamano del efecto pareado
+U-04,alfa_sus,0.9245,consistencia del SUS (10 items)
+U-04,mw_tiempo_p,0.0,Mann-Whitney sobre el tiempo de tarea
+U-04,a12_tiempo,0.1078,probabilidad de superioridad
+U-04,sus_mediana_A,50.0,
+U-04,sus_mediana_B,62.5,
+U-05,razon_tasas,0.6141,"incidentes por dia, despues/antes"
+U-05,rr_ic_inferior,0.4859,IC 95 % de la razon
+U-05,rr_ic_superior,0.7762,IC 95 % de la razon
+U-05,t_conteos_p,0.0004,"prueba inadecuada, para contraste docente"
+U-06,mediana_v1_ms,151.32,sin calentamiento
+U-06,mediana_v2_ms,112.925,sin calentamiento
+U-06,p95_v1_ms,230.6405,cola
+U-06,p95_v2_ms,200.6285,cola
+U-06,dif_medianas_ic_inf,-50.5713,bootstrap 2000
+U-06,dif_medianas_ic_sup,-14.7061,bootstrap 2000
+M-01,r_retest,0.9968,el certificado que engania
+M-01,alfa_dos_columnas,0.9908,alfa sobre dos mediciones
+M-01,cci_a1,0.7421,acuerdo absoluto
+M-01,sesgo_medio_min,2.3847,sesgo sistematico no detectado por r
+M-01,sesgo_pct,19.5791,porcentaje sobre la medicion basal
+M-02,t_p,0.0,"un solo grupo, efecto verdadero nulo"
+M-02,diferencia_medias_h,23.7125,lo que la tesis llamaria mejora
+M-02,efecto_verdadero,0.0,declarado en parametros.json
+M-03,n_total,5000.0,muestra grande
+M-03,t_p,0.0,p minusculo
+M-03,d_cohen,-0.1391,efecto trivial
+M-03,diferencia_ms,-22.084,magnitud en unidades originales
+M-04,desbalance_basal_de,0.6129,diferencia inicial en desviaciones
+M-04,t_postest_p,0.0,sin ajuste
+M-04,t_postest_efecto,11.802,sesgado por la linea basal
+M-04,ancova_efecto,4.9521,efecto ajustado
+M-04,ancova_p,0.0,
+M-05,n_observaciones,5250.0,despachos
+M-05,n_unidades,10.0,camiones
+M-05,t_ingenuo_p,0.0,n = 5250
+M-05,t_agregado_p,0.0141,n = 10
+M-05,d_ingenuo,-0.9331,tamano inflado por pseudorreplicacion
+M-06,alfa_likert,0.9608,consistencia del cuestionario
+M-06,r_likert_defectos,-0.283,asociacion entre percepcion y atributo tecnico
+M-06,n_modulos,12.0,unidades del atributo tecnico
+M-07,alfa_likert,0.9144,escala multi-item: uso legitimo del coeficiente
+M-07,kr20_prueba,0.7146,prueba dicotomica: el numero correcto con otro nombre
+M-07,alfa_ficha,0.9948,dos columnas de una ficha: el coeficiente no significa nada
+M-07,r_ficha,0.9988,con dos columnas el alfa es igual a r
+M-07,cci_ficha,0.8996,lo que corresponde a la ficha: acuerdo absoluto

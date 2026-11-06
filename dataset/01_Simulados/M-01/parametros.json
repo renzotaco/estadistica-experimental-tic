@@ -1,0 +1,17 @@
+{
+  "escenario": "Retest con sesgo del 20 % sobre una ficha de registro",
+  "n": 30,
+  "unidad": "expediente",
+  "error": "r y alfa >= 0,95 presentados como confiabilidad",
+  "correccion": "CCI(A,1) y limites de acuerdo de Bland-Altman",
+  "caso": "M-01",
+  "semilla_maestra": 20261103,
+  "generador": "generar_datos_casos.py",
+  "archivos": [
+    "datos.csv"
+  ],
+  "filas": 30,
+  "columnas": 3,
+  "fecha_utc": "2026-11-04T22:30:17Z",
+  "declaracion": "Datos sinteticos; no reproducen ninguna tesis del corpus."
+}

@@ -1,0 +1,17 @@
+﻿# lo que genera el entorno, no se versiona
+__pycache__/
+*.pyc
+.lo_profile/
+.tmp_pdf/
+*.log
+*.tmp
+~$*
+# salidas de compilación y manuscritos
+08_Salidas/
+03_Manuscritos/
+02_Tablas_y_Figuras/
+01_Revision_Literatura/
+# documentos y hojas de cálculo ofimáticas
+*.docx
+*.pdf
+# datos que cambian al regenerarse (se conservan los manifiestos)

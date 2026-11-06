@@ -1,0 +1,24 @@
+{
+  "escenario": "Tres naturalezas de dato con el mismo coeficiente aplicado",
+  "n_likert": 60,
+  "k_likert": 12,
+  "n_prueba": 45,
+  "k_prueba": 20,
+  "n_ficha": 30,
+  "k_ficha": 2,
+  "unidad": "sujeto (a); estudiante (b); ficha (c)",
+  "error": "informar alfa de Cronbach como certificado unico de los tres instrumentos",
+  "correccion": "alfa u omega con estructura para (a); KR-20 para (b); CCI(A,1) y Bland-Altman para (c)",
+  "archivos": [
+    "datos_likert.csv",
+    "datos_test.csv",
+    "datos_ficha.csv"
+  ],
+  "caso": "M-07",
+  "semilla_maestra": 20261103,
+  "generador": "generar_datos_casos.py",
+  "filas": 60,
+  "columnas": 13,
+  "fecha_utc": "2026-11-04T22:30:17Z",
+  "declaracion": "Datos sinteticos; no reproducen ninguna tesis del corpus."
+}

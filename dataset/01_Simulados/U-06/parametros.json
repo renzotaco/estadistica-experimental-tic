@@ -1,0 +1,18 @@
+{
+  "escenario": "Dos implementaciones, 100 ejecuciones alternadas por variante",
+  "n": 200,
+  "unidad": "ejecucion del metodo",
+  "descartar": "primeras 20 ejecuciones (calentamiento)",
+  "analisis_correcto": "mediana y p95 con IC bootstrap; A12 de Vargha-Delaney",
+  "error_que_previene": "media de cinco corridas y t de Student sobre todas las ejecuciones",
+  "caso": "U-06",
+  "semilla_maestra": 20261103,
+  "generador": "generar_datos_casos.py",
+  "archivos": [
+    "datos.csv"
+  ],
+  "filas": 200,
+  "columnas": 4,
+  "fecha_utc": "2026-11-04T22:30:17Z",
+  "declaracion": "Datos sinteticos; no reproducen ninguna tesis del corpus."
+}

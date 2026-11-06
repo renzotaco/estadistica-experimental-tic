@@ -1,0 +1,17 @@
+{
+  "escenario": "Dos grupos independientes, n grande, efecto de 25 ms",
+  "n": 5000,
+  "unidad": "solicitud",
+  "error": "informar p < 0,001 como prueba de mejora relevante",
+  "correccion": "diferencia en ms con IC y d de Cohen con IC",
+  "caso": "M-03",
+  "semilla_maestra": 20261103,
+  "generador": "generar_datos_casos.py",
+  "archivos": [
+    "datos.csv"
+  ],
+  "filas": 5000,
+  "columnas": 3,
+  "fecha_utc": "2026-11-04T22:30:17Z",
+  "declaracion": "Datos sinteticos; no reproducen ninguna tesis del corpus."
+}

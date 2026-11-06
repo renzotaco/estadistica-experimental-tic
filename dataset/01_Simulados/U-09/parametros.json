@@ -1,0 +1,9 @@
+{
+  "instrumento": "ISO/IEC 25010:2023 (mantenibilidad) e ISO/IEC 25023:2016 (medidas)",
+  "unidad_experimental": "módulo de software",
+  "diseno": "dos versiones del mismo producto, mismos módulos",
+  "prueba_correcta": "Mann-Whitney para densidad (cola larga) con A12 e intervalo bootstrap",
+  "calibracion": "densidad media de 4,3 a 2,9 defectos por KLOC y complejidad de 12,4 a 9,2",
+  "semilla": 20261103,
+  "nota": "datos simulados; no corresponden a un producto real"
+}

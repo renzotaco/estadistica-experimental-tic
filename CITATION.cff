@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Si usa este código o estos datos, cite el libro y este repositorio."
+title: "Estadística experimental para TIC: código y datos"
+abstract: "Generadores, análisis y datos que reproducen cada cifra del libro Estadística experimental para TIC, del Cuaderno de ejercicios y del Solucionario para el docente."
+type: software
+authors:
+  - family-names: "Taco Coayla"
+    given-names: "Renzo Alberto"
+    orcid: "https://orcid.org/0000-0003-0014-7216"
+    email: "rentaco@upt.pe"
+license: CC-BY-NC-SA-4.0
+version: "1.0.0"
+date-released: "2026-11-06"
+keywords:
+  - estadística experimental
+  - ingeniería de sistemas
+  - medición
+  - reproducibilidad
+  - tesis

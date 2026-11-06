@@ -1,0 +1,18 @@
+{
+  "escenario": "10 camiones y 525 despachos por camion",
+  "n": 5250,
+  "unidad_experimental": "camion (10)",
+  "unidad_observacion": "despacho (5250)",
+  "error": "t con n = 5250: pseudorreplicacion",
+  "correccion": "agregar por camion o modelo mixto con intercepto por camion",
+  "caso": "M-05",
+  "semilla_maestra": 20261103,
+  "generador": "generar_datos_casos.py",
+  "archivos": [
+    "datos.csv"
+  ],
+  "filas": 5250,
+  "columnas": 4,
+  "fecha_utc": "2026-11-04T22:30:17Z",
+  "declaracion": "Datos sinteticos; no reproducen ninguna tesis del corpus."
+}

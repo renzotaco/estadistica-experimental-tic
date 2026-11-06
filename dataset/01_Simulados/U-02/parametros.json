@@ -1,0 +1,19 @@
+{
+  "escenario": "Asignacion aleatoria por sesion; dos grupos con pre y post",
+  "n": 120,
+  "unidad": "sesion de compra",
+  "efecto_verdadero_ms": -45.0,
+  "tendencia_temporal_ms": 12.0,
+  "analisis_correcto": "ANCOVA sobre el postest con la linea basal como covariable",
+  "error_que_previene": "t sobre el postest o sobre la diferencia sin ajuste",
+  "caso": "U-02",
+  "semilla_maestra": 20261103,
+  "generador": "generar_datos_casos.py",
+  "archivos": [
+    "datos.csv"
+  ],
+  "filas": 120,
+  "columnas": 4,
+  "fecha_utc": "2026-11-04T22:30:17Z",
+  "declaracion": "Datos sinteticos; no reproducen ninguna tesis del corpus."
+}

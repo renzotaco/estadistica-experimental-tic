@@ -1,0 +1,17 @@
+{
+  "escenario": "Conteo de incidentes por dia-servicio; cambio de plataforma",
+  "n": 90,
+  "unidad": "dia de servicio",
+  "analisis_correcto": "razon de tasas con IC (Poisson o binomial negativa)",
+  "error_que_previene": "t de Student sobre conteos o sobre porcentajes",
+  "caso": "U-05",
+  "semilla_maestra": 20261103,
+  "generador": "generar_datos_casos.py",
+  "archivos": [
+    "datos.csv"
+  ],
+  "filas": 90,
+  "columnas": 4,
+  "fecha_utc": "2026-11-04T22:30:17Z",
+  "declaracion": "Datos sinteticos; no reproducen ninguna tesis del corpus."
+}

@@ -1,0 +1,17 @@
+{
+  "escenario": "Dos instrumentos, misma magnitud; acuerdo absoluto",
+  "n": 60,
+  "unidad": "lote de 100 peticiones HTTP",
+  "analisis_correcto": "CCI(A,1) y limites de acuerdo de Bland-Altman",
+  "error_que_previene": "usar r de Pearson o un alfa como prueba de acuerdo",
+  "caso": "U-01",
+  "semilla_maestra": 20261103,
+  "generador": "generar_datos_casos.py",
+  "archivos": [
+    "datos.csv"
+  ],
+  "filas": 60,
+  "columnas": 3,
+  "fecha_utc": "2026-11-04T22:30:17Z",
+  "declaracion": "Datos sinteticos; no reproducen ninguna tesis del corpus."
+}
