@@ -5,6 +5,7 @@ Repositorio del libro **Estadística experimental para TIC**, del **Cuaderno de 
 R, los generadores y los datos.
 
 **Licencia:** CC BY-NC-SA 4.0 · **Autor:** [ORCID 0000-0003-0014-7216](https://orcid.org/0000-0003-0014-7216)
+Enlace a Sitio web: https://renzotaco.github.io/estadistica-experimental-tic/
 
 ---
 
